@@ -8,7 +8,28 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
-            "scripts/virtualbox.sh",
+            "scripts/virtualbox.sh"
+          ]
+        }
+      }
+    },
+    {
+      "type": "shell",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
+            "scripts/ruby.sh",
+            "scripts/rails.sh"
+          ]
+        }
+      }
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

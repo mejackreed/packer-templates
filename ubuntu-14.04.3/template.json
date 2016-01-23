@@ -19,7 +19,8 @@
         "virtualbox-iso": {
           "scripts": [
             "scripts/ruby.sh",
-            "scripts/rails.sh"
+            "scripts/rails.sh",
+            "scripts/geoblacklight.sh"
           ]
         }
       }

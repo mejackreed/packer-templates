@@ -30,6 +30,7 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
+            "scripts/opengeosuite.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

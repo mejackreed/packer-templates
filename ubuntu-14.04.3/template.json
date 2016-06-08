@@ -8,7 +8,10 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
-            "scripts/virtualbox.sh"
+            "scripts/virtualbox.sh",
+            "scripts/java.sh",
+            "scripts/fits.sh",
+            "scripts/geo.sh"
           ]
         }
       }
@@ -31,7 +34,7 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "scripts/opengeosuite.sh",
+            "scripts/geo-concerns.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

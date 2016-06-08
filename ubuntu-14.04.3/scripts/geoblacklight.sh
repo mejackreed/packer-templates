@@ -2,7 +2,7 @@ mkdir pregenerated
 
 cd pregenerated
 
-rails new demo_geoblacklight_app -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/template.rb
+rails new demo_geoblacklight_app -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/template.rb --skip-spring
 
 cd demo_geoblacklight_app
 

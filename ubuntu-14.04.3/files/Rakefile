@@ -1,0 +1,28 @@
+# Rakefile for the GeoConcerns App
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require File.expand_path('../config/application', __FILE__)
+
+Rails.application.load_tasks
+
+require 'solr_wrapper/rake_task'
+require 'fcrepo_wrapper/rake_task'
+
+namespace :demo do
+  desc "Run fedora, solr, and rails servers for Geo Concerns"
+  task :servers do
+    with_server 'development' do
+      begin
+        `rails s -b 0.0.0.0`
+      rescue Interrupt
+        puts "Shutting down..."
+      end
+    end
+  end
+  desc "Setup fedora and solr for Geo Concerns"
+  task :setup do
+    with_server 'development' do
+    end
+  end
+end

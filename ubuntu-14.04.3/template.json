@@ -34,7 +34,22 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "scripts/geo-concerns.sh",
+            "scripts/geo-concerns.sh"          ]
+        }
+      }
+    },
+    {
+      "type": "file",
+      "source": "files/Rakefile",
+      "destination": "/tmp/packer-vagrant/Rakefile"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
+      "override": {
+        "virtualbox-iso": {
+          "scripts": [
+            "scripts/geo-concerns-finish.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

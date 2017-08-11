@@ -8,7 +8,8 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
-            "scripts/virtualbox.sh"
+            "scripts/virtualbox.sh",
+            "scripts/java.sh"
           ]
         }
       }
@@ -31,7 +32,6 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "scripts/opengeosuite.sh",
             "scripts/cleanup.sh",
             "scripts/zerodisk.sh"
           ]

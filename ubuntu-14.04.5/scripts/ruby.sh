@@ -28,8 +28,8 @@ cd ~/.rbenv
 #rbenv install --keep 2.1.0
 #rbenv install --keep 2.1.1
 #rbenv install --keep 2.1.2
-rbenv install --keep 2.2.4
-rbenv global 2.2.4
+rbenv install --keep 2.3.4
+rbenv global 2.3.4
 ruby -v
 echo -e "install: --no-ri --no-rdoc\nupdate: --no-ri --no-rdoc" > ~/.gemrc
 

@@ -4,10 +4,13 @@ cd pregenerated
 
 rails new demo_geoblacklight_app -m https://raw.githubusercontent.com/geoblacklight/geoblacklight/master/template.rb
 
-cd demo_geoblacklight_app
+mkdir ~/solr
+cd ~/solr
 
-bundle exec rake jetty:download
+echo "download_dir: ~/solr" >> ~/.solr_wrapper
 
-bundle exec rake jetty:unzip
+curl -O https://archive.apache.org/dist/lucene/solr/6.6.0/solr-6.6.0.zip
 
-bundle exec rake geoblacklight:configure_jetty
+cd ~/pregenerated/demo_geoblacklight_app
+
+bundle install

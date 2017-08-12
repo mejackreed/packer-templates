@@ -8,8 +8,7 @@
           "scripts": [
             "scripts/base.sh",
             "scripts/vagrant.sh",
-            "scripts/virtualbox.sh",
-            "scripts/java.sh"
+            "scripts/virtualbox.sh"
           ]
         }
       }
@@ -19,6 +18,7 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
+            "scripts/java.sh",
             "scripts/ruby.sh",
             "scripts/rails.sh",
             "scripts/geoblacklight.sh"
@@ -44,7 +44,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "ubuntu-14-04-5-x32-virtualbox.box"
+          "output": "ubuntu-16-04-3-x32-virtualbox.box"
         }
       }
     }
@@ -53,14 +53,22 @@
     {
       "type": "virtualbox-iso",
       "boot_command": [
-        "<esc><wait>",
-        "<esc><wait>",
-        "<enter><wait>",
+        "<enter><wait><f6><esc>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
         "/install/vmlinuz<wait>",
         " auto<wait>",
         " console-setup/ask_detect=false<wait>",
         " console-setup/layoutcode=us<wait>",
         " console-setup/modelcode=pc105<wait>",
+        " debconf/frontend=noninteractive<wait>",
         " debian-installer=en_US<wait>",
         " fb=false<wait>",
         " initrd=/install/initrd.gz<wait>",
@@ -68,8 +76,8 @@
         " keyboard-configuration/layout=USA<wait>",
         " keyboard-configuration/variant=USA<wait>",
         " locale=en_US<wait>",
-        " netcfg/get_hostname=ubuntu-14043<wait>",
-        " netcfg/get_domain=vagrantup.com<wait>",
+        " domain=localdomain<wait>",
+        " hostname=localhost<wait>",
         " noapic<wait>",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait>",
         " -- <wait>",
@@ -79,9 +87,9 @@
       "disk_size": 8192,
       "guest_os_type": "Ubuntu",
       "http_directory": "http",
-      "iso_checksum": "812ac191b8898b33aed4aef9ab066b5a",
+      "iso_checksum": "8428cead4ee139873da19248590e354f",
       "iso_checksum_type": "md5",
-      "iso_url": "http://releases.ubuntu.com/14.04.5/ubuntu-14.04.5-server-i386.iso",
+      "iso_url": "http://releases.ubuntu.com/16.04.3/ubuntu-16.04.3-server-i386.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
